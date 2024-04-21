@@ -1,16 +1,18 @@
 {
   "name": "@sektek/eslint-plugin",
-  "version": "0.1.0",
-  "description": "Configuration for eslint for all @sektek projects",
+  "version": "0.0.0",
+  "description": "Eslint configuration for all @sektek projects",
   "author": "Edward Kelly <eddie@sektek.net>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sektek/eslint-plugin.git"
+  },
   "license": "MIT",
   "type": "commonjs",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "dependencies": {
-    "@sektek/prettier-config": "^0.1.0",
+    "@sektek/prettier-config": "^1.1.3",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
     "eslint-config-prettier": "^9.1.0",
