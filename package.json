@@ -8,6 +8,7 @@
     "url": "git+https://github.com/sektek/eslint-plugin.git"
   },
   "license": "MIT",
+  "private": false,
   "type": "commonjs",
   "main": "index.js",
   "scripts": {},
