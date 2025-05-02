@@ -18,7 +18,7 @@ module.exports = {
       files: ['.eslintrc.js', '.eslintrc.cjs'],
       rules: {
         'filenames/match-regex': 'off',
-      }
+      },
     },
     {
       files: ['*.spec.js', '*.spec.ts'],
@@ -26,8 +26,8 @@ module.exports = {
         'sonarjs/no-identical-functions': 'off',
         'sonarjs/no-duplicate-string': 'off',
         'filenames/match-regex': 'off',
-      }
-    }
+      },
+    },
   ],
   plugins: [
     'eslint-comments',
@@ -39,18 +39,19 @@ module.exports = {
     'sonarjs',
   ],
   rules: {
+    'filenames/match-regex': ['error', '^[a-z0-9-]+$'],
+    'import/newline-after-import': 'error',
+    'mocha/no-exclusive-tests': 'error',
     'no-console': 'error',
     'no-eval': 'error',
     'no-duplicate-imports': 'error',
     'no-var': 'error',
     'prefer-const': 'error',
     'prefer-template': 'error',
-    'sort-imports': 'error',
-    'yoda': 'error',
-    'filenames/match-regex': ['error', '^[a-z0-9-]+$'],
     'promise/prefer-await-to-callbacks': 'error',
     'promise/prefer-await-to-then': 'error',
-    'mocha/no-exclusive-tests': 'error',
+    'sort-imports': ['error', { allowSeparatedGroups: true }],
+    yoda: 'error',
   },
   settings: {
     'import/resolver': {
@@ -58,5 +59,5 @@ module.exports = {
         extensions: ['.js', '.ts'],
       },
     },
-  }
-}
+  },
+};

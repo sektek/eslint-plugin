@@ -5,6 +5,14 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint'],
+  overrides: [
+    {
+      files: ['globals.d.ts'],
+      rules: {
+        'filenames/match-regex': 'off',
+      },
+    },
+  ],
   settings: {
     'import/resolver': {
       typescript: {
@@ -13,6 +21,7 @@ module.exports = {
     },
   },
   rules: {
+    'no-dupe-class-members': 'off',
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
   },
