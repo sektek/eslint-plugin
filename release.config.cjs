@@ -1,3 +1,5 @@
+/* eslint-disable eslint-comments/disable-enable-pair */
+/* eslint-disable filenames/match-regex */
 /**
  * @type {import('semantic-release').GlobalConfig}
  */
