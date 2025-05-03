@@ -1,7 +1,8 @@
+import { defineConfig } from 'eslint/config';
 import recommended from './recommended.js';
 import typescriptEslint from '@typescript-eslint/eslint-plugin';
 
-export default [
+export default defineConfig([
   // typescriptEslint.configs.recommended,
   recommended,
   {
@@ -11,4 +12,4 @@ export default [
       '@typescript-eslint/no-unused-vars': 'error',
     },
   },
-];
+]);

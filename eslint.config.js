@@ -1,6 +1,7 @@
+import { defineConfig } from 'eslint-define-config';
 import recommended from './configs/recommended.js';
 
-export default [
+export default defineConfig([
   recommended,
   {
     languageOptions : {
@@ -10,4 +11,4 @@ export default [
     },
     rules: {},
   }
-];
+]);

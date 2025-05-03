@@ -1,3 +1,4 @@
+import { defineConfig } from 'eslint/config';
 import js from '@eslint/js';
 import eslintPluginPrettier from 'eslint-plugin-prettier';
 import eslintComments from 'eslint-plugin-eslint-comments';
@@ -6,7 +7,7 @@ import eslintPluginMocha from 'eslint-plugin-mocha';
 import eslintPluginPromise from 'eslint-plugin-promise';
 import eslintPluginSonarjs from 'eslint-plugin-sonarjs';
 
-export default [
+export default defineConfig([
   js.configs.recommended,
   // eslintPluginPrettier.configs.recommended,
   eslintComments.configs.recommended,
@@ -46,4 +47,4 @@ export default [
     },
     ignores: ['node_modules/', '/dist/'],
   }
-];
+]);
