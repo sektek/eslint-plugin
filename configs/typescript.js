@@ -1,37 +1,48 @@
-module.exports = {
-  extends: ['plugin:@typescript-eslint/recommended', './configs/recommended'],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    sourceType: 'module',
-  },
-  plugins: ['@typescript-eslint'],
-  overrides: [
-    {
-      files: ['globals.d.ts'],
-      rules: {
-        'filenames/match-regex': 'off',
-      },
-    },
-    {
-      files: ['*.spec.ts'],
-      rules: {
-        '@typescript-eslint/no-unused-expressions': 'off',
-      },
-    },
-  ],
-  settings: {
-    'import/resolver': {
-      typescript: {
-        alwaysTryTypes: true,
+import { defineConfig } from 'eslint/config';
+import jsdoc from 'eslint-plugin-jsdoc';
+import ts from 'typescript-eslint';
+
+import recommended from './recommended.js';
+
+export default defineConfig([
+  ...recommended,
+  ...ts.configs.recommended,
+  {
+    extends: [jsdoc.configs['flat/recommended-typescript']],
+    settings: {
+      'import/resolver': {
+        typescript: {
+          alwaysTryTypes: true,
+        },
       },
     },
   },
-  rules: {
-    'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': 'error',
-    '@typescript-eslint/no-empty-object-type': [
-      'error',
-      { allowInterfaces: 'always' },
-    ],
+  {
+    files: ['**/*.cjs'],
+    rules: {
+      '@typescript-eslint/no-require-imports': 'off',
+    },
   },
-};
+  {
+    rules: {
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': 'error',
+      '@typescript-eslint/no-empty-object-type': [
+        'error',
+        { allowInterfaces: 'always' },
+      ],
+    },
+  },
+  {
+    files: ['globals.d.ts'],
+    rules: {
+      'check-file/filename-naming-convention': 'off',
+    },
+  },
+  {
+    files: ['**/*.spec.ts'],
+    rules: {
+      '@typescript-eslint/no-unused-expressions': 'off',
+    },
+  },
+]);
