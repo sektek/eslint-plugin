@@ -11,14 +11,13 @@ npm install --save-dev eslint @sektek/eslint-plugin
 Extend the configs you want in your `.eslintrc.js`:
 
 ```js
-module.exports = {
-  extends: [
-    'plugin:@sektek/typescript',
-  ],
-};
-```
+import { defineConfig } from 'eslint/config';
+import sektek from '@sektek/eslint-plugin';
 
-For TypeScript projects, you should also have a `tsconfig.json` file.
+export default defineConfig([
+  sektek.configs.recommended,
+]);
+```
 
 ## Rules
 
