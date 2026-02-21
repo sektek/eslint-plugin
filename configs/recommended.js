@@ -46,7 +46,7 @@ export default defineConfig([
     rules: {
       'check-file/filename-naming-convention': [
         'error',
-        { '**/*{js,ts}': 'KEBAB_CASE' },
+        { '**/*\\.{js,ts}': 'KEBAB_CASE' },
       ],
       'prettier/prettier': 'error',
       'import/no-unresolved': 'error',
