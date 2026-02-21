@@ -11,7 +11,9 @@
   "private": false,
   "type": "module",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "lint": "eslint ."
+  },
   "dependencies": {
     "@sektek/prettier-config": "^2",
     "@typescript-eslint/parser": "^8.48.1",
