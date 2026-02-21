@@ -40,10 +40,7 @@ export default defineConfig([
     },
     settings: {
       'import/resolver': {
-        node: {
-          extensions: ['.js', '.ts'],
-          moduleDirectories: ['node_modules', 'src', '../node_modules'],
-        },
+        typescript: true,
       },
     },
     rules: {
