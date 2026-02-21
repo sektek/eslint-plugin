@@ -48,8 +48,6 @@ export default defineConfig([
         'error',
         { '**/*\\.{js,ts}': 'KEBAB_CASE' },
       ],
-      'prettier/prettier': 'error',
-      'import/no-unresolved': 'error',
       'import/newline-after-import': 'error',
       'mocha/no-exclusive-tests': 'error',
       'no-console': 'error',
