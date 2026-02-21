@@ -8,7 +8,7 @@ npm install --save-dev eslint @sektek/eslint-plugin
 
 ## Setup
 
-Extend the configs you want in your `.eslintrc.js`:
+Extend the configs you want in your `eslint.config.js` file:
 
 ```js
 import { defineConfig } from 'eslint/config';
