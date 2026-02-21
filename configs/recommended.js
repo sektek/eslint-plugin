@@ -1,4 +1,4 @@
-import { defineConfig, globalIgnores } from 'eslint/config';
+import { globalIgnores } from 'eslint/config';
 import globals from 'globals';
 
 import checkFile from 'eslint-plugin-check-file';
@@ -11,8 +11,8 @@ import prettierConfig from 'eslint-plugin-prettier/recommended';
 import promise from 'eslint-plugin-promise';
 import sonarjs from 'eslint-plugin-sonarjs';
 
-export default defineConfig([
-  globalIgnores(['node_modules', 'dist', 'coverage']),
+export default [
+  globalIgnores(['node_modules/**', 'dist/**', 'coverage/**']),
   {
     extends: [
       js.configs.recommended,
@@ -24,7 +24,6 @@ export default defineConfig([
       sonarjs.configs.recommended,
     ],
     plugins: {
-      // filenames,
       'check-file': checkFile,
       js,
       mocha,
@@ -76,4 +75,4 @@ export default defineConfig([
       'check-file/filename-naming-convention': 'off',
     },
   },
-]);
+];

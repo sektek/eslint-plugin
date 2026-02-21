@@ -4,7 +4,7 @@ import ts from 'typescript-eslint';
 
 import recommended from './recommended.js';
 
-export default defineConfig([
+export default [
   ...recommended,
   ...ts.configs.recommended,
   {
@@ -45,4 +45,4 @@ export default defineConfig([
       '@typescript-eslint/no-unused-expressions': 'off',
     },
   },
-]);
+];
