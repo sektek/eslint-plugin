@@ -48,6 +48,7 @@ export default [
         { '**/*\\.{js,ts}': 'KEBAB_CASE' },
       ],
       'import/newline-after-import': 'error',
+      'jsdoc/tag-lines': ['error', 'any', { startLines: 1, maxBlockLines: 1 }],
       'mocha/no-exclusive-tests': 'error',
       'no-console': 'error',
       'no-eval': 'error',
@@ -70,9 +71,11 @@ export default [
   {
     files: ['**/*.spec.js', '**/*.spec.ts'],
     rules: {
+      'check-file/filename-naming-convention': 'off',
+      'jsdoc/require-jsdoc': 'off',
       'sonarjs/no-identical-functions': 'off',
       'sonarjs/no-duplicate-string': 'off',
-      'check-file/filename-naming-convention': 'off',
+      'sonarjs/no-clear-text-protocols': 'off',
     },
   },
 ];

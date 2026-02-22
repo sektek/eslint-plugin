@@ -1,4 +1,3 @@
-import { defineConfig } from 'eslint/config';
 import jsdoc from 'eslint-plugin-jsdoc';
 import ts from 'typescript-eslint';
 
@@ -43,6 +42,7 @@ export default [
     files: ['**/*.spec.ts'],
     rules: {
       '@typescript-eslint/no-unused-expressions': 'off',
+      'jsdoc/require-jsdoc': 'off',
     },
   },
 ];
