@@ -4,6 +4,12 @@ on:
   push:
     branches: [ "main" ]
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Run semantic-release without publishing"
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -42,4 +48,9 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      run: npx semantic-release
+      run: |
+        if [ "${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run }}" = "true" ]; then
+          npx semantic-release --dry-run
+        else
+          npx semantic-release
+        fi
