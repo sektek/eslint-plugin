@@ -24,7 +24,9 @@ jobs:
         with:
           node-version: 24
       - name: Login to GitHub Packages
-        run: echo "//npm.pkg.github.com/:_authToken=${{secrets.GITHUB_TOKEN}}" > ~/.npmrc
+        run: |
+          echo "@sektek:registry=https://npm.pkg.github.com" > ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{secrets.PACKAGE_TOKEN}}" >> ~/.npmrc
       - name: Install Dependencies
         run: npm ci
       - name: Build
@@ -46,7 +48,9 @@ jobs:
           node-version: 24
           registry-url: https://npm.pkg.github.com/
       - name: Login to GitHub Packages
-        run: echo "//npm.pkg.github.com/:_authToken=${{secrets.GITHUB_TOKEN}}" > ~/.npmrc
+        run: |
+          echo "@sektek:registry=https://npm.pkg.github.com" > ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{secrets.PACKAGE_TOKEN}}" >> ~/.npmrc
       - name: Install Dependencies
         run: npm ci
       - name: Build
