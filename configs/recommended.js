@@ -53,7 +53,8 @@ export default [
           groups: [
             'builtin',
             ['external', 'internal'],
-            ['parent', 'sibling', 'index'],
+            'parent',
+            ['sibling', 'index'],
           ],
           'newlines-between': 'always',
         },
