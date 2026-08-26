@@ -1,7 +1,6 @@
+import checkFile from 'eslint-plugin-check-file';
 import { globalIgnores } from 'eslint/config';
 import globals from 'globals';
-
-import checkFile from 'eslint-plugin-check-file';
 import importPlugin from 'eslint-plugin-import';
 import js from '@eslint/js';
 import jsdoc from 'eslint-plugin-jsdoc';
@@ -48,6 +47,18 @@ export default [
         { '**/*\\.{js,ts}': 'KEBAB_CASE' },
       ],
       'import/newline-after-import': 'error',
+      'import/order': [
+        'error',
+        {
+          groups: [
+            'builtin',
+            ['external', 'internal'],
+            'parent',
+            ['sibling', 'index'],
+          ],
+          'newlines-between': 'always',
+        },
+      ],
       'jsdoc/tag-lines': ['error', 'any', { startLines: 1, maxBlockLines: 1 }],
       'mocha/no-exclusive-tests': 'error',
       'no-console': 'error',
