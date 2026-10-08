@@ -59,6 +59,7 @@ export default [
           'newlines-between': 'always',
         },
       ],
+      'jsdoc/require-jsdoc': ['error', { publicOnly: true }],
       'jsdoc/tag-lines': ['error', 'any', { startLines: 1, maxBlockLines: 1 }],
       'mocha/no-exclusive-tests': 'error',
       'no-console': 'error',
