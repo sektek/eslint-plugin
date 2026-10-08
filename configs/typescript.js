@@ -8,6 +8,9 @@ export default [
   ...ts.configs.recommended,
   {
     extends: [jsdoc.configs['flat/recommended-typescript']],
+    rules: {
+      'jsdoc/require-jsdoc': ['error', { publicOnly: true }],
+    },
     settings: {
       'import/resolver': {
         typescript: {
